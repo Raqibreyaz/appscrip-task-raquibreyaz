@@ -7,47 +7,19 @@ import { FaHeart } from "react-icons/fa";
 import React, { Dispatch, memo, SetStateAction } from "react";
 import { productTypes } from "../main";
 
-export const ProductList: React.FC<{
-  products: productTypes[];
-  setProducts: Dispatch<SetStateAction<productTypes[]>>;
-}> = memo(({ products, setProducts }) => {
-
-  const makeFavorite = (index: number, favorite: boolean) => {
-    const updatedProducts = [...products];
-    updatedProducts[index].isFavorite = favorite;
-    setProducts(updatedProducts);
-  };
-
-  return (
-    <div
-      className={`${styles["product-list-container"]} `}
-    >
-      {products.map((values, index) => (
-        <ProductCard
-          {...values}
-          key={index}
-          isFavorite={!!values.isFavorite}
-          index={index}
-          makeFavorite={makeFavorite}
-        />
-      ))}
-    </div>
-  );
-});
-
 interface ProductCardTypes extends productTypes {
   isFavorite: boolean;
   index: number;
   makeFavorite: (id: number, favorite: boolean) => void;
 }
 
-function ProductCard({
+const ProductCard:React.FC<ProductCardTypes> = ({
   title,
   image,
   isFavorite,
   index,
   makeFavorite,
-}: ProductCardTypes) {
+}) => {
   return (
     <div className={styles["product-card"]}>
       <div className={styles.image}>
@@ -74,4 +46,30 @@ function ProductCard({
       </div>
     </div>
   );
-}
+};
+
+export const ProductList: React.FC<{
+  products: productTypes[];
+  setProducts: Dispatch<SetStateAction<productTypes[]>>;
+}> = memo(({ products, setProducts }) => {
+  const makeFavorite = (index: number, favorite: boolean) => {
+    const updatedProducts = [...products];
+    updatedProducts[index].isFavorite = favorite;
+    setProducts(updatedProducts);
+  };
+
+  return (
+    <div className={`${styles["product-list-container"]} `}>
+      {products.map((values, index) => (
+        <ProductCard
+          {...values}
+          key={index}
+          isFavorite={!!values.isFavorite}
+          index={index}
+          makeFavorite={makeFavorite}
+        />
+      ))}
+    </div>
+  );
+});
+

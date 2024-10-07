@@ -2,7 +2,7 @@
 
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import styles from "./filter.module.css";
-import { Dispatch, SetStateAction, useCallback, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { SliderWrapper } from "@/sub-components/slider-wrapper/slider-wrapper";
 
 type QueryTypes = {

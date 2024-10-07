@@ -4,26 +4,29 @@ export const fetchProducts = async (
     sort: string;
   } | null
 ) => {
-  const q = query
-    ? `/category/${query.category}${
-        query.sort ? `?sort=${query.sort}&limit=25` : "?limit=25"
-      }`
-    : "";
+  let x: string = "";
+
+  if (query?.category) {
+    x = `/category/${query.category}`;
+  }
+  if (query?.sort) {
+    x += `?sort=${query.sort}&limit=25`;
+  }
 
   // key:/electronics, /jewelry
-  const storedProducts = localStorage.getItem(q);
+  const storedProducts = localStorage.getItem(x);
 
   // if products are already chached for that query then use it
   if (storedProducts) return JSON.parse(storedProducts);
 
   // otherwise fetch products and then store and use them
-  const products = await fetch(`https://fakestoreapi.com/products${q}`).then(
-    (res) => {
-      return res.json();
-    }
-  );
+  const products = await fetch(
+    `https://fakestoreapi.com/products${x ? x : "?limit=25"}`
+  ).then((res) => {
+    return res.json();
+  });
 
-  localStorage.setItem(q, JSON.stringify(products));
+  localStorage.setItem(x, JSON.stringify(products));
 
   return products;
 };
