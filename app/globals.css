@@ -1,0 +1,125 @@
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.border-t {
+  border-top: 1px solid rgb(225, 220, 220);
+}
+
+.border-b {
+  border-bottom: 1px solid rgb(225, 220, 220);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.lowercase{
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-bolder {
+  font-weight: bolder;
+}
+
+.text-small {
+  font-size: small;
+}
+
+.text-smaller {
+  font-size: 12px;
+}
+
+.text-large {
+  font-size: large;
+}
+
+.text-larger {
+  font-size:larger;
+}
+
+.text-center{
+  text-align: center;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+main {
+  width: 90vw;
+  margin: auto;
+}
+
+@media only screen and (max-width:640px) {
+  body {
+    width: 100%;
+    padding: 0 5px 0 5px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0px 2px 0px 1px;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

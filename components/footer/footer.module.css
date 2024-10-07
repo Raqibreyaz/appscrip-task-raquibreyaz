@@ -1,0 +1,130 @@
+.footer {
+    background-color: black;
+    width: 100%;
+    color: white;
+    padding: 50px 50px 20px 70px;
+    margin-top: 20px;
+    font-weight: 100;
+}
+
+.footer-section-1,
+.footer-section-2 {
+    width: 100%;
+    padding: 30px 0px 20px 0px;
+}
+
+.section-2-part-1,
+.section-2-part-2,
+.section-2-part-3 {
+    flex-direction: column;
+    gap: 5px;
+}
+
+.section-1-part-1 {
+    gap: 30px;
+    flex-direction: column;
+}
+
+.form {
+    gap: 5px;
+}
+
+.form input {
+    padding: 12px;
+    width: 300px;
+}
+
+.form button {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid gray;
+    color: rgb(148, 143, 143);
+    border-radius: 5px;
+}
+
+.section-1-part-2 {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payments-icon {
+    font-size: 20px;
+    gap: 10px;
+}
+
+.google-icon {
+    font-size: 35px;
+}
+
+.mastercard-icon {
+    font-size: 25px;
+}
+
+.paypal-icon {
+    font-size: 20px;
+}
+
+.footer-section-1 hr,
+.footer-section-2 hr {
+    display: none;
+}
+
+.text-30-px {
+    font-size: 30px;
+}
+
+.text-20-px {
+    font-size: 20px;
+}
+
+.text-12-px {
+    font-size: 12px;
+}
+
+.text-8-px {
+    font-size: 8px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width:640px) {
+    .footer {
+        padding: 10px;
+    }
+
+    .footer-section-1,
+    .footer-section-2 {
+        flex-direction: column;
+        padding: 0;
+        gap: 15px;
+    }
+
+    .footer>hr {
+        display: none;
+    }
+
+    .part hr {
+        display: block;
+    }
+
+    .section-2-part-1,
+    .section-2-part-2,
+    .section-2-part-3 {
+        padding: 0;
+    }
+
+    .part {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid white;
+    }
+    
+    .form input {
+        padding: 6px;
+        width: 50%;
+    }
+    
+    .form button {
+        padding: 5px 7px 5px 7px;
+        font-size: 10px;
+    }
+}

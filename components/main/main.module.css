@@ -1,0 +1,20 @@
+.filter-products-container {
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+    position: relative;
+}
+
+.mobile-filter{
+    display: none;
+}
+
+@media only screen and (max-width: 640px) {
+    .desktop-filter {
+        display: none !important;
+    }
+
+    .mobile-filter {
+        display: block;
+    }
+}

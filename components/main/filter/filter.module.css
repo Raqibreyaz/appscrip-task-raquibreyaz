@@ -1,0 +1,78 @@
+.filter-container {
+    width: 240px;
+    transition: all 1s linear;
+    overflow-y: auto;
+}
+
+.filter-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.customizable {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bolder;
+    gap: 7px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.collapse {
+    cursor: pointer;
+    font-weight: 100;
+}
+
+.title-bar {
+    justify-content: space-between;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.title-bar h4 {
+    font-weight: bolder;
+    font-size: small;
+}
+
+.all {
+    font-size: 13px;
+    margin-top: 7px;
+    margin-bottom: 15px;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.unselect-all {
+    border: none;
+    outline: none;
+    text-decoration: underline;
+    color: rgb(158, 174, 199);
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.filter-field {
+    gap: 3px;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+@media only screen and (max-width:640px) {
+
+    .unselect-all,
+    .all {
+        color: white;
+        background-color: rgb(29, 28, 28)
+    }
+
+    .filter-container h4,
+    .customizable label {
+        font-size: 10px;
+    }
+}
