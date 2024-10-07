@@ -19,8 +19,6 @@ export const fetchProducts = async (
   // otherwise fetch products and then store and use them
   const products = await fetch(`https://fakestoreapi.com/products${q}`).then(
     (res) => {
-      console.log(q, res);
-
       return res.json();
     }
   );

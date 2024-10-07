@@ -68,7 +68,6 @@ export const MobileFilter: React.FC<MobileFilterTypes> = ({
 function FilterBox({ title, fields, setQuery }: FilterBoxTypes) {
   // for opening or collapsing the filter fields
   const [collapsed, setCollapsed] = useState<boolean>(true);
-  console.log(fields.length);
 
   // keeping track of every checked field
   const [checkedItems, setCheckedItems] = useState<boolean[]>(
@@ -87,13 +86,10 @@ function FilterBox({ title, fields, setQuery }: FilterBoxTypes) {
 
   // updating the checked items history on check
   const handleIndividualCheck = (index: number) => {
-    console.log("before checking", checkedItems);
-
     const updatedCheckedItems = [...checkedItems];
 
     const isChecked = !updatedCheckedItems[index];
 
-    console.log(`${index} clicked`, isChecked);
     // will trigger refetch only when we checked it
     if (isChecked) {
       setQuery((prevQuery) =>
@@ -104,12 +100,8 @@ function FilterBox({ title, fields, setQuery }: FilterBoxTypes) {
     }
     updatedCheckedItems[index] = isChecked;
 
-    console.log(updatedCheckedItems);
-
     setCheckedItems(updatedCheckedItems);
   };
-
-  console.log(checkedItems.length, checkedItems);
 
   return (
     <div className={`${styles["filter-box"]} border-b`}>
@@ -143,8 +135,6 @@ function FilterBox({ title, fields, setQuery }: FilterBoxTypes) {
         </div>
         <div>
           {fields.map((name, index) => {
-            console.log(name);
-
             return (
               <div
                 key={name}
